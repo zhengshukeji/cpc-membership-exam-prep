@@ -27,10 +27,15 @@ a{color:var(--acc)}
 .topin{max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .mark{width:10px;height:10px;border-radius:3px;background:var(--acc);flex:none}
 .brand{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700}
-.brand .sub{color:var(--sub);font-size:12px;font-weight:400}
+/* ===== 页脚免责声明（三个标签页共用，随内容滚动） ===== */
+.foot{max-width:920px;margin:0 auto;padding:6px 16px 36px;color:var(--sub);font-size:12px;line-height:1.75;text-align:center}
+.foot b{color:var(--ink);font-weight:600}
 .tabs{display:flex;gap:4px;margin-left:auto}
 .tab{border:0;background:transparent;color:var(--sub);font-size:14px;padding:7px 13px;border-radius:9px;cursor:pointer;font-family:inherit}
 .tab.on{background:var(--acc-sf);color:var(--acc);font-weight:600}
+/* ===== 顶部联系条（随吸顶栏常驻显示） ===== */
+.contact{border-top:1px solid var(--line);color:var(--sub);text-align:center;font-size:12.5px;padding:5px 16px;line-height:1.6}
+.contact a{color:var(--acc);font-weight:600;text-decoration:none}
 /* ===== 版心 ===== */
 .wrap{max-width:920px;margin:0 auto;padding:18px 16px 60px}
 .view[hidden]{display:none}
@@ -115,18 +120,19 @@ details.grp[open] summary::after{content:"－"}
 .st .v{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
 .st .k{font-size:12px;color:var(--sub)}
 .selftag{font-size:11.5px;border:1px solid var(--line);color:var(--sub);border-radius:99px;padding:1px 8px;font-weight:400;margin-left:6px;vertical-align:1px}
-@media print{.top,.toc,.bar,.nav-btns{display:none!important}body{background:#fff}.wrap{max-width:none;padding:0}}
+@media print{.top,.contact,.toc,.bar,.nav-btns{display:none!important}body{background:#fff}.wrap{max-width:none;padding:0}}
 </style>
 
 <header class="top">
   <div class="topin">
-    <div class="brand"><span class="mark"></span>入党考试复习<span class="sub">党史 · 厦大校史 · 党章</span></div>
+    <div class="brand"><span class="mark"></span>入党考试复习</div>
     <nav class="tabs">
       <button class="tab" data-v="read" type="button">知识点</button>
       <button class="tab" data-v="bank" type="button">题库</button>
       <button class="tab" data-v="quiz" type="button">做题</button>
     </nav>
   </div>
+  <div class="contact">联系邮箱：<a href="mailto:tointcn@qq.com">tointcn@qq.com</a></div>
 </header>
 
 <main class="wrap">
@@ -152,6 +158,8 @@ details.grp[open] summary::after{content:"－"}
     <div id="qz-report" hidden></div>
   </section>
 </main>
+
+<footer class="foot"><b>免责声明</b>：本页面为个人整理的学习资料，仅供复习参考，非官方发布；内容摘编自公开资料，如有出入，以《中国共产党章程》及官方最新文件、厦门大学官方发布为准。</footer>
 
 <script type="text/markdown" id="src-md"># 入党考试复习资料：党史 + 厦大校史 + 高频专题
 
