@@ -27,15 +27,19 @@ a{color:var(--acc)}
 .topin{max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .mark{width:10px;height:10px;border-radius:3px;background:var(--acc);flex:none}
 .brand{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700}
-/* ===== 页脚免责声明（三个标签页共用，随内容滚动） ===== */
-.foot{max-width:920px;margin:0 auto;padding:6px 16px 36px;color:var(--sub);font-size:12px;line-height:1.75;text-align:center}
-.foot b{color:var(--ink);font-weight:600}
+/* ===== 页首免责声明（不吸顶，打开即见、滚动划走） ===== */
+.notice{max-width:920px;margin:0 auto;padding:8px 16px 4px;color:var(--sub);font-size:12px;line-height:1.7;text-align:center}
 .tabs{display:flex;gap:4px;margin-left:auto}
 .tab{border:0;background:transparent;color:var(--sub);font-size:14px;padding:7px 13px;border-radius:9px;cursor:pointer;font-family:inherit}
 .tab.on{background:var(--acc-sf);color:var(--acc);font-weight:600}
-/* ===== 顶部联系条（随吸顶栏常驻显示） ===== */
-.contact{border-top:1px solid var(--line);color:var(--sub);text-align:center;font-size:12.5px;padding:5px 16px;line-height:1.6}
-.contact a{color:var(--acc);font-weight:600;text-decoration:none}
+/* ===== 顶部联系条：方形徽章居中，GitHub 在前、邮箱在后 ===== */
+.contact{border-top:1px solid var(--line);text-align:center;padding:7px 16px}
+.contact a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;
+  color:var(--sub);text-decoration:none;background:var(--bg);
+  border:1px solid var(--line);border-radius:6px;padding:2px 12px;transition:color .15s,border-color .15s}
+.contact a:hover{color:var(--acc);border-color:var(--acc)}
+.contact a+a{margin-left:8px}
+.contact svg{flex:none}
 /* ===== 版心 ===== */
 .wrap{max-width:920px;margin:0 auto;padding:18px 16px 60px}
 .view[hidden]{display:none}
@@ -123,6 +127,8 @@ details.grp[open] summary::after{content:"－"}
 @media print{.top,.contact,.toc,.bar,.nav-btns{display:none!important}body{background:#fff}.wrap{max-width:none;padding:0}}
 </style>
 
+<div class="notice">免责声明：本页面为个人整理的学习资料，仅供复习参考，非官方发布；内容摘编自公开资料，如有出入，以《中国共产党章程》及官方最新文件、厦门大学官方发布为准。</div>
+
 <header class="top">
   <div class="topin">
     <div class="brand"><span class="mark"></span>入党考试复习</div>
@@ -132,7 +138,10 @@ details.grp[open] summary::after{content:"－"}
       <button class="tab" data-v="quiz" type="button">做题</button>
     </nav>
   </div>
-  <div class="contact">联系邮箱：<a href="mailto:tointcn@qq.com">tointcn@qq.com</a></div>
+  <div class="contact">
+    <a href="https://github.com/zhengshukeji/cpc-membership-exam-prep" target="_blank" rel="noopener" title="GitHub 仓库" aria-label="GitHub 仓库"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>GitHub</a>
+    <a href="mailto:tointcn@qq.com"><svg viewBox="0 0 24 24" width="13.5" height="13.5" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m22 6-10 7L2 6"/></svg>tointcn@qq.com</a>
+  </div>
 </header>
 
 <main class="wrap">
@@ -158,8 +167,6 @@ details.grp[open] summary::after{content:"－"}
     <div id="qz-report" hidden></div>
   </section>
 </main>
-
-<footer class="foot"><b>免责声明</b>：本页面为个人整理的学习资料，仅供复习参考，非官方发布；内容摘编自公开资料，如有出入，以《中国共产党章程》及官方最新文件、厦门大学官方发布为准。</footer>
 
 <script type="text/markdown" id="src-md"># 入党考试复习资料：党史 + 厦大校史 + 高频专题
 
